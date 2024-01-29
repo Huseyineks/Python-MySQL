@@ -9,5 +9,4 @@ db = mysql.connector.connect(
 
 mycursor = db.cursor()
 
-
-mycursor.execute("CREATE DATABASE registerationdatabase")
+mycursor.execute("CREATE TABLE Person (person_id int PRIMARY KEY AUTO_INCREMENT,first_name VARCHAR(50) NOT NULL,last_name VARCHAR(50) NOT NULL,country VARCHAR(20),password VARCHAR(100) NOT NULL)")
