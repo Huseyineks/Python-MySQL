@@ -9,6 +9,17 @@ db = mysql.connector.connect(
 
 mycursor = db.cursor()
 
-mycursor.execute("INSERT INTO Person(first_name,last_name,country,password) VALUES(%s,%s,%s,%s)",("Huseyin","Demirdelen","Spain","password123"))
+sent = "INSERT INTO Person(first_name,last_name,country,password) VALUES(%s,%s,%s,%s)"
 
-db.commit()
+key = input("To exit press q to continue press w: ")
+while key != 'q':
+ 
+ first_name = input("Input a first name: ")
+ last_name = input("Input a last name: ")
+ country = input("Input a country: ")
+ password = input("Input a password: ")
+ 
+ mycursor.execute(sent,(first_name,last_name,country,password))
+ db.commit()
+
+ key = input("To exit press q to continue press w: ")
